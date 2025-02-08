@@ -15,7 +15,7 @@ const Hero = () => {
             feathered, and scaly friends happy and healthy. Trust our expert
             vets to provide compassionate care—one paw at a time!
           </p>
-          <Button className="lg:w-1/3 w-1/2 p-3">Book an Appointment</Button>
+          <Button className="bg-green-500 lg:w-1/3 w-1/2 p-3 py-6">Book an Appointment</Button>
         </div>
         <div className="lg:w-1/2 lg:h-[600px]">
           <img src={heroImg} alt="" />

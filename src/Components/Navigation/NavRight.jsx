@@ -12,7 +12,7 @@ const NavRight = () => {
           <NavSheet />
         ) : (
           <Link>
-            <Button>Join For Free</Button>
+            <Button className="bg-green-500">Join For Free</Button>
           </Link>
         )}
       </div>
