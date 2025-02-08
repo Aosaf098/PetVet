@@ -4,7 +4,7 @@ import NavRight from "./NavRight";
 const Navbar = () => {
   return (
     <>
-      <div className="flex items-center justify-around py-3">
+      <div className="flex items-center py-3 lg:px-0 px-6">
         <NavLogo />
         <NavCenter />
         <NavRight />

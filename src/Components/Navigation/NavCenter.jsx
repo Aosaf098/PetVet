@@ -12,7 +12,7 @@ import {
 const NavCenter = () => {
   return (
     <>
-      <div className="flex-1 flex items-center justify-center gap-10">
+      <div className="flex-1 hidden lg:flex items-center justify-center gap-10">
         <Link>
           <Button className="font-bold" variant="ghost">
             Home

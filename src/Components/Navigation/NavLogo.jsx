@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const NavLogo = () => {
   return (
     <>
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex-1 flex items-center lg:justify-center">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
