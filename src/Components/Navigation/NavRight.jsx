@@ -6,7 +6,7 @@ const NavRight = () => {
   const loggedIn = true;
   return (
     <>
-      <div className="border-4 border-solid border-blue-500 flex-1 flex items-center justify-center">
+      <div className="flex-1 flex items-center justify-center">
         {loggedIn ? (
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />

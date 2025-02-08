@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom"
 const MainLayout = () => {
   return (
     <>
-    <div className="h-dvh border-4 border-solid border-blue-500">
+    <div className="h-dvh font-poppins">
         <Navbar />
     </div>
     <Outlet />
