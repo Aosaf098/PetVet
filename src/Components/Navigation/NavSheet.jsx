@@ -24,7 +24,7 @@ const NavSheet = () => {
           </Avatar>
         </SheetTrigger>
         <SheetContent>
-          <ul className="flex flex-col">
+          <ul className="flex lg:hidden flex-col">
             <Link>
               <Button className="text-xl font-bold" variant="ghost">
                 Home
