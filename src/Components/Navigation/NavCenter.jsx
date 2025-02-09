@@ -18,6 +18,11 @@ const NavCenter = () => {
             Home
           </Button>
         </Link>
+        <Link>
+          <Button className="font-bold" variant="ghost">
+            About
+          </Button>
+        </Link>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
