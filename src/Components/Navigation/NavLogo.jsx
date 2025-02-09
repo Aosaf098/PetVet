@@ -16,8 +16,8 @@ const NavLogo = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Link to={"/"} className="flex items-center gap-2">
-                <img className="w-16" src={logo} alt="" />
-                <img className="w-36" src={text} alt="" />
+                <img className="lg:w-16 w-12" src={logo} alt="" />
+                <img className="lg:w-36 w-28" src={text} alt="" />
               </Link>
             </TooltipTrigger>
             <TooltipContent>PetVet</TooltipContent>

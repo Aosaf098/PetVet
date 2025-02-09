@@ -4,62 +4,52 @@ import dogSleeping from "../../../public/assets/dogSleeping.json";
 const HomeService = () => {
   return (
     <>
-      <div className="w-3/4 mx-auto my-16">
-        <h1 className="text-center lg:text-4xl text-3xl font-bold tracking-wider">
+      <div className="lg:w-3/4 w-11/12 mx-auto my-16">
+        <h1 className="text-center lg:text-4xl text-2xl font-bold tracking-wider">
           Our Services
         </h1>
-        <div className="my-12 w-3/4 mx-auto gap-2 grid grid-cols-3">
+        <div className="my-12 lg:w-3/4 w-11/12 mx-auto ">
           <div className="mx-auto">
-            <ul className="p-3 space-y-6 *:text-xl *:font-semibold flex flex-col items-center justify-center *:w-72 *:bg-green-500">
-              <li className="p-2 rounded-lg text-center">Routine Check Up</li>
-              <li className=" p-2 rounded-lg text-center">
+            <ul className="p-3 grid grid-cols-2 lg:grid-cols-3 place-items-center lg:gap-8 gap-x-20 gap-y-8 *:text-xl *:font-semibold lg:*:w-72 *:w-48 lg:*:h-auto *:h-16 *:bg-green-500 *:p-2 *:rounded-lg *:text-center">
+              <li className="hover:bg-green-600 text-white">
+                Routine Check Up
+              </li>
+              <li className="hover:bg-green-600 text-white">
                 Veterinary Medicine
               </li>
-              <li className="p-2 rounded-lg text-center">Vaccination</li>
-              <li className=" p-2 rounded-lg text-center">Deworming</li>
-              <li className="p-2 rounded-lg text-center">Spay & Neuter</li>
-            </ul>
-          </div>
-          <div className=" mx-auto">
-            <ul className="p-3 space-y-6 *:text-xl *:font-semibold flex flex-col items-center justify-center *:w-72 *:bg-green-500">
-              <li className="p-2 rounded-lg text-center">
+              <li className="hover:bg-green-600 text-white">Vaccination</li>
+              <li className="hover:bg-green-600 text-white">Deworming</li>
+              <li className="hover:bg-green-600 text-white">Spay & Neuter</li>
+              <li className="hover:bg-green-600 text-white">
                 Emergency Surgery
               </li>
-              <li className=" p-2 rounded-lg text-center">
+              <li className="hover:bg-green-600 text-white">
                 Orthopedic Surgery
               </li>
-              <li className="p-2 rounded-lg text-center">Ultrasonography</li>
-              <li className="p-2 rounded-lg text-center">
+              <li className="hover:bg-green-600 text-white">Ultrasonography</li>
+              <li className="hover:bg-green-600 text-white">
                 Microscopic Examination
               </li>
-              <li className="p-2 rounded-lg text-center">X-Ray & Cytology</li>
-            </ul>
-          </div>
-          <div className="mx-auto">
-            <ul className="p-3 space-y-6 *:text-xl *:font-semibold flex flex-col items-center justify-center *:w-72 *:bg-green-500">
-              <li className="p-2 rounded-lg text-center">
+              <li className="hover:bg-green-600 text-white">
+                X-Ray & Cytology
+              </li>
+              <li className="hover:bg-green-600 text-white">
                 Pathological Examination
               </li>
-              <li className=" p-2 rounded-lg text-center">
+              <li className="hover:bg-green-600 text-white">
                 Migration Consultancy
               </li>
-              <li className=" p-2 rounded-lg text-center">
+              <li className="hover:bg-green-600 text-white">
                 Postoperative Care
               </li>
-              <li className=" p-2 rounded-lg text-center">
+              <li className="hover:bg-green-600 text-white">
                 Grooming & Medication
               </li>
-              <li className="  p-2 rounded-lg text-center">
+              <li className="hover:bg-green-600 text-white">
                 Food & Accessories
               </li>
             </ul>
           </div>
-
-          {/* <div className="w-1/2 border-4 border-solid border-blue-500 h-[400px]">
-          <div className="w-1/2 mx-auto">
-                <Lottie animationData={dogSleeping} />
-            </div>
-          </div> */}
         </div>
       </div>
     </>

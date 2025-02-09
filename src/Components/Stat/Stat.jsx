@@ -3,9 +3,9 @@ import React from "react";
 const Stat = () => {
   return (
     <>
-      <div className="lg:w-2/3 mx-auto my-10">
+      <div className="lg:w-2/3 w-11/12 mx-auto my-10">
         <div className="lg:w-1/2 mx-auto px-3">
-          <h1 className="text-center lg:text-4xl text-3xl font-bold tracking-wider">
+          <h1 className="text-center lg:text-4xl text-2xl font-bold tracking-wider ">
             Welcome to the PetVet
             <br />
             Vet Clinic & Services
