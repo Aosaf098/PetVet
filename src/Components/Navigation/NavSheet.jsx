@@ -22,6 +22,7 @@ const NavSheet = () => {
             />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
+          
         </SheetTrigger>
         <SheetContent>
           <ul className="flex lg:hidden flex-col">

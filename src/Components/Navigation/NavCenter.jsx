@@ -8,6 +8,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "../ui/navigation-menu";
+import { FileCheck, Home, Store, Text } from "lucide-react";
 
 const NavCenter = () => {
   return (
@@ -15,11 +16,13 @@ const NavCenter = () => {
       <div className="flex-1 hidden lg:flex items-center justify-center gap-10">
         <Link>
           <Button className="font-bold" variant="ghost">
+            <Home />
             Home
           </Button>
         </Link>
         <Link>
           <Button className="font-bold" variant="ghost">
+            <Text />
             About
           </Button>
         </Link>
@@ -27,6 +30,7 @@ const NavCenter = () => {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger className="font-bold">
+                <FileCheck className="w-4 h-4 mr-1" />
                 Services
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -44,6 +48,7 @@ const NavCenter = () => {
         </NavigationMenu>
         <Link>
           <Button className="font-bold" variant="ghost">
+            <Store />
             Shop
           </Button>
         </Link>

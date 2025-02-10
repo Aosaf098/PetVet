@@ -4,7 +4,7 @@ import NavSheet from "./NavSheet";
 
 
 const NavRight = () => {
-  const loggedIn = false;
+  const loggedIn = true;
   return (
     <>
       <div className="flex-1 flex items-center lg:justify-center justify-end">
