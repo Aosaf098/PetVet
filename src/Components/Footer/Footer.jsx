@@ -2,11 +2,12 @@ import React from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Link } from "react-router-dom";
+import { Separator } from "../ui/separator";
 
 const Footer = () => {
   return (
     <>
-      <footer class="bg-muted text-base-content mt-12 px-10 py-14 flex items-center justify-evenly">
+      <footer class="bg-muted text-base-content mt-12 px-10 py-14 flex lg:flex-row flex-col lg:items-center gap-6 lg:justify-evenly">
         <nav className="flex flex-col">
           <h6 class="font-semibold text-lg">Services</h6>
           <a class="">Branding</a>
@@ -60,6 +61,12 @@ const Footer = () => {
           </fieldset>
         </form>
       </footer>
+      <Separator className="" />
+      <aside className="flex items-center justify-center pt-2 mb-2 bg-muted">
+        <p className="text-sm">
+          Copyright © {new Date().getFullYear()} - All right reserved by PetVet Ltd.
+        </p>
+      </aside>
     </>
   );
 };
