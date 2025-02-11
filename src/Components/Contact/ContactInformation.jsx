@@ -9,24 +9,24 @@ const ContactInformation = () => {
               Conatct
             </h3>
           </div>
-          <div className="p-4 space-y-4 bg-slate-700 *:text-white rounded-lg">
+          <div className="lg:p-4 p-2 space-y-4 bg-slate-700 *:text-white rounded-lg">
             <div className="flex items-center gap-2">
-              <span className="flex items-center text-xl font-semibold gap-2 w-32">
+              <span className="flex items-center lg:text-xl font-semibold gap-2 lg:w-32 w-24">
                 <MapPin className="w-5 h-5" />
                 Address
               </span>
               <span>:</span>
-              <span className="font-medium">
+              <span className="lg:font-medium">
                 Flat-1, 34/B, Oriental Harmony, Dhanmondi 5
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="flex items-center text-xl font-semibold gap-2 w-32">
+              <span className="flex items-center lg:text-xl font-semibold gap-2 lg:w-32 w-24">
                 <Phone className="w-5 h-5" />
                 Hotline
               </span>
               <span>:</span>
-              <span className="font-medium">+880 1329485901</span>
+              <span className="lg:font-medium">+880 1329485901</span>
             </div>
           </div>  
     </>

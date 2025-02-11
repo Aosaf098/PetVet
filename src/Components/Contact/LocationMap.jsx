@@ -2,7 +2,7 @@ import React from "react";
 
 const LocationMap = () => {
   return (
-    <div style={{ width: "50%", height: "500px" }}>
+    <div className="lg:w-1/2 lg:h-[500px] aspect-square w-11/12">
       <iframe
         className="rounded-lg"
         title="OpenStreetMap"

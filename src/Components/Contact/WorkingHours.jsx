@@ -8,7 +8,7 @@ const WorkingHours = () => {
           Working Hours
         </h3>
       </div>
-      <div className="*:text-white *:font-bold bg-slate-700 px-4 py-10 w-3/5 rounded-lg">
+      <div className="*:text-white *:font-bold bg-slate-700 px-4 py-10 lg:w-3/5 rounded-lg">
         <div className="flex items-center gap-2">
           <span className="flex items-center text-xl font-semibold gap-2 w-52">
             Sunday - Thursday
