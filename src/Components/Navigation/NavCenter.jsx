@@ -29,7 +29,7 @@ const NavCenter = () => {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="font-bold">
+              <NavigationMenuTrigger className="font-bold bg-main">
                 <FileCheck className="w-4 h-4 mr-1" />
                 Services
               </NavigationMenuTrigger>

@@ -11,6 +11,7 @@ module.exports = {
   			]
   		},
 		backgroundColor: {
+			'main': '#F8F5E9',
 			'prim': '#54C392',
 			'secon': '#15B392'
 		},

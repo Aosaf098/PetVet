@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => {
   return (
     <>
-      <div className="min-h-dvh font-poppins">
+      <div className="min-h-dvh font-poppins bg-main">
         <Navbar />
         <Outlet />
         <Footer />
