@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <>
       <div>
-        <div className="lg:w-2/3 w-11/12 mx-auto lg:my-16 my-10 flex lg:flex-row flex-col items-center relative">
+        <div className="lg:w-2/3 w-11/12 mx-auto lg:my-8 my-10 flex lg:flex-row flex-col items-center relative">
           <div className="lg:w-1/2 lg:h-[600px] lg:p-4 px-8 flex gap-10 flex-col lg:py-28">
             <div className="lg:flex flex-col gap-5 hidden">
               <h1 className="lg:text-5xl font-bold">Pawfect Care: Where</h1>
@@ -18,7 +18,7 @@ const Hero = () => {
             <div>
               <h1 className="text-4xl font-bold leading-relaxed lg:hidden block">
                 Pawfect Care: Where Happy Pets Meet Expert{" "}
-                <span className="bg-green-400 px-3 py-1 rounded-sm font-bold">
+                <span className="bg-green-400 text-white shadow-xl px-3 py-1 rounded-sm font-bold">
                   Vets!
                 </span>
               </h1>
@@ -37,7 +37,7 @@ const Hero = () => {
             <img src={heroImg} alt="" />
           </div>
         </div>
-        <div className="absolute top-[185px] left-[249px] hidden lg:block">
+        <div className="absolute top-[145px] left-[249px] hidden lg:block">
           <img className="w-24 -rotate-180" src={injection} alt="" />
         </div>
       </div>

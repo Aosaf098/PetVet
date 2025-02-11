@@ -5,7 +5,7 @@ import gobo from "../../../public/assets/about.png";
 const About = () => {
   return (
     <>
-      <div className="lg:w-2/3 mx-auto my-16 flex lg:flex-row flex-col justify-between items-center">
+      <div className="lg:w-2/3 mx-auto lg:my-8 flex lg:flex-row flex-col justify-between items-center">
         <div className="lg:w-3/5">
             <img className="lg:w-[600px]" src={gobo} alt="" />
         </div>
