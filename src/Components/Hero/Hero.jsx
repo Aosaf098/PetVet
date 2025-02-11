@@ -29,7 +29,7 @@ const Hero = () => {
               feathered, and scaly friends happy and healthy. Trust our expert
               vets to provide compassionate care—one paw at a time!
             </p>
-            <Button className="bg-green-500 lg:w-1/3 lg:p-6 p-5 w-3/5">
+            <Button className="bg-prim lg:w-1/3 lg:p-6 p-5 w-3/5">
               Book an Appointment
             </Button>
           </div>

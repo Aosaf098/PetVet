@@ -8,7 +8,7 @@ const HomeService = () => {
         </h1>
         <div className="my-12 lg:w-3/4 w-11/12 mx-auto ">
           <div className="mx-auto">
-            <ul className="p-3 grid grid-cols-2 lg:grid-cols-3 place-items-center lg:gap-8 gap-x-20 gap-y-8 *:text-xl *:font-semibold lg:*:w-72 *:w-48 lg:*:h-auto *:h-16 *:bg-green-500 *:shadow-xl *:p-2 *:rounded-lg *:text-center">
+            <ul className="p-3 grid grid-cols-2 lg:grid-cols-3 place-items-center lg:gap-8 gap-x-20 gap-y-8 *:text-xl *:font-semibold lg:*:w-72 *:w-48 lg:*:h-auto *:h-16 *:bg-secon *:shadow-xl *:p-2 *:rounded-lg *:text-center">
               <li className="hover:bg-green-600 text-white">
                 Routine Check Up
               </li>

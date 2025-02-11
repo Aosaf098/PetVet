@@ -1,3 +1,4 @@
+import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navigation/Navbar";
 import { Outlet } from "react-router-dom";
 
@@ -7,6 +8,7 @@ const MainLayout = () => {
       <div className="min-h-dvh font-poppins">
         <Navbar />
         <Outlet />
+        <Footer />
       </div>
     </>
   );

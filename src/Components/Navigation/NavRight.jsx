@@ -4,7 +4,7 @@ import NavSheet from "./NavSheet";
 
 
 const NavRight = () => {
-  const loggedIn = true;
+  const loggedIn = false;
   return (
     <>
       <div className="flex-1 flex items-center lg:justify-center justify-end">
@@ -12,7 +12,7 @@ const NavRight = () => {
           <NavSheet />
         ) : (
           <Link>
-            <Button className="bg-green-500">Join For Free</Button>
+            <Button className="bg-prim">Join For Free</Button>
           </Link>
         )}
       </div>

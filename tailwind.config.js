@@ -10,6 +10,10 @@ module.exports = {
   				'sans-serif'
   			]
   		},
+		backgroundColor: {
+			'prim': '#54C392',
+			'secon': '#15B392'
+		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
