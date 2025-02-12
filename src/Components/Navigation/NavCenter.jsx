@@ -15,13 +15,13 @@ const NavCenter = () => {
     <>
       <div className="flex-1 hidden lg:flex items-center justify-center gap-10">
         <Link>
-          <Button className="font-bold" variant="ghost">
+          <Button className="font-bold hover:bg-prim" variant="ghost">
             <Home />
             Home
           </Button>
         </Link>
         <Link>
-          <Button className="font-bold" variant="ghost">
+          <Button className="font-bold hover:bg-prim" variant="ghost">
             <Text />
             About
           </Button>
@@ -29,7 +29,7 @@ const NavCenter = () => {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="font-bold bg-main">
+              <NavigationMenuTrigger className="font-bold bg-main hover:bg-prim">
                 <FileCheck className="w-4 h-4 mr-1" />
                 Services
               </NavigationMenuTrigger>
@@ -47,7 +47,7 @@ const NavCenter = () => {
           </NavigationMenuList>
         </NavigationMenu>
         <Link>
-          <Button className="font-bold" variant="ghost">
+          <Button className="font-bold hover:bg-prim" variant="ghost">
             <Store />
             Shop
           </Button>

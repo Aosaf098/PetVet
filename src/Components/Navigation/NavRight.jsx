@@ -11,7 +11,7 @@ const NavRight = () => {
         {loggedIn ? (
           <NavSheet />
         ) : (
-          <Link>
+          <Link to={'/auth/login'}>
             <Button className="bg-prim">Join For Free</Button>
           </Link>
         )}

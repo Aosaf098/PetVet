@@ -3,7 +3,6 @@ import React from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Button } from "../ui/button";
-import { Facebook } from "lucide-react";
 
 const LoginForm = () => {
   return (
@@ -31,32 +30,32 @@ const LoginForm = () => {
           </div>
           <Input id="password" type="password" required />
         </div>
-        <Button type="submit" className="w-full bg-prim">
+        <Button type="submit" className="w-full bg-secon hover:bg-prim">
           Login
         </Button>
         <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
-          <span className="relative z-10 bg-background px-2 text-muted-foreground">
+          <span className="relative z-10 bg-main px-2 text-muted-foreground">
             Or continue with
           </span>
         </div>
         <Button
           variant="outline"
-          className="w-full bg-secon text-white font-bold shadow-xl"
+          className="w-full bg-secon text-white shadow-xl hover:bg-prim hover:text-white"
         >
           <img
-            className="w-6"
-            src="https://img.icons8.com/?size=48&id=uLWV5A9vXIPu&format=png"
+            
+            src="https://img.icons8.com/?size=24&id=uLWV5A9vXIPu&format=png"
             alt=""
           />
           Login with Facebook
         </Button>
         <Button
           variant="outline"
-          className="w-full bg-secon text-white font-bold shadow-xl"
+          className="w-full bg-secon text-white shadow-xl hover:bg-prim hover:text-white"
         >
           <img
-            className="w-6"
-            src="https://img.icons8.com/?size=48&id=V5cGWnc9R4xj&format=png"
+            
+            src="https://img.icons8.com/?size=24&id=V5cGWnc9R4xj&format=png"
             alt=""
           />
           Login with Google
