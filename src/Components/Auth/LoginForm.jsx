@@ -1,12 +1,14 @@
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useContext } from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 import Socials from "./Socials";
+import AuthContext from "@/Context/AuthContext";
 
 const LoginForm = () => {
+  const { eyeOpen, handleShowPassword } = useContext(AuthContext);
   return (
     <form className={cn("flex flex-col gap-6")}>
       <div className="flex flex-col items-center gap-3 text-center">
@@ -25,7 +27,7 @@ const LoginForm = () => {
           <Label htmlFor="email">Email</Label>
           <Input id="email" type="email" placeholder="m@example.com" required />
         </div>
-        <div className="grid gap-2">
+        <div className="grid gap-2 relative">
           <div className="flex items-center">
             <Label htmlFor="password">Password</Label>
             <a
@@ -35,7 +37,13 @@ const LoginForm = () => {
               Forgot your password?
             </a>
           </div>
-          <Input id="password" type="password" required />
+          <Input id="password" type={eyeOpen ? "text" : "password"} required />
+          <span
+            onClick={handleShowPassword}
+            className="absolute text-xs top-[38px] right-3 cursor-pointer"
+          >
+            {eyeOpen ? "Hide" : "Show"}
+          </span>
         </div>
         <Button type="submit" className="w-full bg-secon hover:bg-prim">
           Login

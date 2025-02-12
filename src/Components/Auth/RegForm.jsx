@@ -1,12 +1,14 @@
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useContext } from "react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 import Socials from "./Socials";
+import AuthContext from "@/Context/AuthContext";
 
 const RegForm = () => {
+    const {eyeOpen, handleShowPassword, confirmEyeOpen, handleConfirmShowPassword} = useContext(AuthContext)
   return (
     <>
       <form className={cn("flex flex-col gap-6")}>
@@ -35,17 +37,19 @@ const RegForm = () => {
               required
             />
           </div>
-          <div className="grid gap-2">
+          <div className="grid gap-2 relative">
             <div className="flex items-center">
               <Label htmlFor="password">Password</Label>
             </div>
-            <Input id="password" type="password" placeholder="password" required />
+            <Input id="password" type={eyeOpen ? 'text' : 'password'} placeholder="password" required />
+            <span onClick={handleShowPassword} className="absolute text-xs top-[32px] right-3 cursor-pointer">{eyeOpen ? 'Hide' : 'Show'}</span>
           </div>
-          <div className="grid gap-2">
+          <div className="grid gap-2 relative">
             <div className="flex items-center">
               <Label htmlFor="password">Confirm Password</Label>
             </div>
-            <Input id="password" type="password" placeholder="confirm password" required />
+            <Input id="password" type={confirmEyeOpen ? 'text' : 'password'} placeholder="confirm password" required />
+            <span onClick={handleConfirmShowPassword} className="absolute text-xs top-[32px] right-3 cursor-pointer">{confirmEyeOpen ? 'Hide' : 'Show'}</span>
           </div>
           <Button type="submit" className="w-full bg-secon hover:bg-prim">
             Register
