@@ -27,25 +27,25 @@ const About = () => {
           </p>
           <div className="grid lg:grid-cols-2 gap-y-8 py-6">
             <div className="flex items-center gap-2 w-3/4">
-              <div className="w-8 h-8 rounded-lg bg-green-400 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-prim flex items-center justify-center">
                 <Check className="text-white" />
               </div>
               <h3 className="text-lg font-semibold">Skilled Personal</h3>
             </div>
             <div className="flex items-center gap-2 w-3/4">
-              <div className="w-8 h-8 rounded-lg bg-green-400 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-prim flex items-center justify-center">
                 <Check className="text-white" />
               </div>
               <h3 className="text-lg font-semibold">Pets Care 24/7</h3>
             </div>
             <div className="flex items-center gap-2 w-3/4">
-              <div className="w-8 h-8 rounded-lg bg-green-400 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-prim flex items-center justify-center">
                 <Check className="text-white" />
               </div>
               <h3 className="text-lg font-semibold">Best Veterinars</h3>
             </div>
             <div className="flex items-center gap-2 w-3/4">
-              <div className="w-8 h-8 rounded-lg bg-green-400 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-prim flex items-center justify-center">
                 <Check className="text-white" />
               </div>
               <h3 className="text-lg font-semibold">Quality Food</h3>

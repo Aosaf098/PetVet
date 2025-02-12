@@ -11,7 +11,7 @@ const Hero = () => {
             <div className="lg:flex flex-col gap-5 hidden">
               <h1 className="lg:text-5xl font-bold">Pawfect Care: Where</h1>
               <h1 className="lg:text-5xl font-bold">Happy Pets Meet Expert</h1>
-              <span className="bg-green-400 px-3 py-1 rounded-sm font-bold text-white shadow-xl lg:text-5xl w-40">
+              <span className="bg-prim px-3 py-1 rounded-sm font-bold text-white shadow-xl lg:text-5xl w-40">
                 Vets!
               </span>
             </div>
