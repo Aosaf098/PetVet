@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 const Hero = () => {
   return (
     <>
-      <div>
+      <div data-aos="fade-down">
         <div className="lg:w-2/3 w-11/12 mx-auto lg:my-8 my-10 flex lg:flex-row flex-col items-center relative">
           <div className="lg:w-1/2 lg:h-[600px] lg:p-4 px-8 flex gap-10 flex-col lg:py-28">
             <div className="lg:flex flex-col gap-5 hidden">
