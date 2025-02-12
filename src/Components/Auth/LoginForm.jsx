@@ -4,12 +4,18 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
+import Socials from "./Socials";
 
 const LoginForm = () => {
   return (
     <form className={cn("flex flex-col gap-6")}>
       <div className="flex flex-col items-center gap-3 text-center">
-        <h1 className="text-2xl font-bold"><span className="bg-prim px-4 py-1 rounded-sm text-white m-1">Login</span> to your account</h1>
+        <h1 className="text-2xl font-bold">
+          <span className="bg-prim px-4 py-1 rounded-sm text-white m-1">
+            Login
+          </span>{" "}
+          to your account
+        </h1>
         <p className="text-balance text-xs text-muted-foreground">
           Enter your email below to login to your account
         </p>
@@ -39,33 +45,13 @@ const LoginForm = () => {
             Or continue with
           </span>
         </div>
-        <Button
-          variant="outline"
-          className="w-full bg-secon text-white shadow-xl hover:bg-prim hover:text-white"
-        >
-          <img
-            
-            src="https://img.icons8.com/?size=24&id=uLWV5A9vXIPu&format=png"
-            alt=""
-          />
-          Login with Facebook
-        </Button>
-        <Button
-          variant="outline"
-          className="w-full bg-secon text-white shadow-xl hover:bg-prim hover:text-white"
-        >
-          <img
-            
-            src="https://img.icons8.com/?size=24&id=V5cGWnc9R4xj&format=png"
-            alt=""
-          />
-          Login with Google
-        </Button>
-        
+        <Socials />
       </div>
       <div className="text-center text-sm">
         Don&apos;t have an account?{" "}
-        <Link to={'/auth/register'} className="underline underline-offset-2">Sign Up</Link>
+        <Link to={"/auth/register"} className="underline underline-offset-2">
+          Sign Up
+        </Link>
       </div>
     </form>
   );

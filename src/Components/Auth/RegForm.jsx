@@ -4,6 +4,7 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
+import Socials from "./Socials";
 
 const RegForm = () => {
   return (
@@ -54,26 +55,7 @@ const RegForm = () => {
               Or continue with
             </span>
           </div>
-          <Button
-            variant="outline"
-            className="w-full bg-secon text-white shadow-xl hover:bg-prim hover:text-white"
-          >
-            <img
-              src="https://img.icons8.com/?size=24&id=uLWV5A9vXIPu&format=png"
-              alt=""
-            />
-            Login with Facebook
-          </Button>
-          <Button
-            variant="outline"
-            className="w-full bg-secon text-white shadow-xl hover:bg-prim hover:text-white"
-          >
-            <img
-              src="https://img.icons8.com/?size=24&id=V5cGWnc9R4xj&format=png"
-              alt=""
-            />
-            Login with Google
-          </Button>
+          <Socials />
         </div>
         <div className="text-center text-sm">
           Already have an account?{" "}
