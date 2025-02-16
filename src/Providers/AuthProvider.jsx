@@ -5,6 +5,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 
@@ -12,12 +13,23 @@ const AuthProvider = ({ children }) => {
   const [eyeOpen, setEyeOpen] = useState(false);
   const [confirmEyeOpen, setConfirmEyeOpen] = useState(false);
   const [users, setUsers] = useState(null);
+  const [loading, setLoading] = useState(true);
+  console.log("What is the Auth Actually:", auth.currentUser);
 
-  const registerNewUser = (email, password) => {
+
+  const registerNewUser = (email, password, displayName) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         console.log(result.user);
         setUsers(result.user);
+        updateProfile(auth.currentUser, {displayName})
+        .then((result) => {
+          setUsers(result.user)
+          console.log('Profile Updated')
+        })
+        .catch((err) => {
+          console.log(err.message)
+        })
       })
       .catch((err) => {
         console.log(err.message);
@@ -25,6 +37,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const signInExistingUser = (email, password) => {
+    setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         console.log(result.user);
@@ -36,9 +49,10 @@ const AuthProvider = ({ children }) => {
   };
 
   const signOutExistingUser = () => {
+    setLoading(true);
     signOut(auth)
       .then(() => {
-        alert('Signing Out')
+        alert("Signing Out");
         console.log("Signed Out");
       })
       .catch((err) => {
@@ -55,6 +69,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUsers(currentUser);
+      setLoading(false);
     });
     return () => {
       unsubscribe();
@@ -71,6 +86,8 @@ const AuthProvider = ({ children }) => {
     confirmEyeOpen,
     handleConfirmShowPassword,
   };
+
+  console.log("User", users);
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

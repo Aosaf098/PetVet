@@ -12,7 +12,7 @@ const NavRight = () => {
       <div className="flex-1 flex items-center lg:justify-center justify-end">
         {users?.email ? (
           <div className="flex items-center gap-10">
-            <NavSheet />
+            <NavSheet users={users} />
             <Button onClick={signOutExistingUser} className="bg-prim">
               Log Out
             </Button>

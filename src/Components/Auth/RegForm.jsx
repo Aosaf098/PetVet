@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 const RegForm = () => {
   const {
     registerNewUser,
+    updateUser,
     eyeOpen,
     handleShowPassword,
     confirmEyeOpen,
@@ -19,15 +20,13 @@ const RegForm = () => {
 
   const { register, handleSubmit } = useForm();
 
-  const [email, setEmail] = useState('')
 
   const onSubmit = (data) => {
     console.log("Form Data: ", data)
-    setEmail(data?.email)
-    registerNewUser(data?.email, data?.password)
+    registerNewUser(data?.email, data?.password, data?.username)
+    console.log('Username in the Reg Form:', data?.username)
   };
 
-  console.log('Email: ', email)
 
   return (
     <>
