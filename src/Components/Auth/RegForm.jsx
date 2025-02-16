@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Socials from "./Socials";
 import AuthContext from "@/Context/AuthContext";
 import { useForm } from "react-hook-form";
@@ -17,10 +17,12 @@ const RegForm = () => {
     confirmEyeOpen,
     handleConfirmShowPassword,
   } = useContext(AuthContext);
-
+  console.log(useForm())
   const { register, handleSubmit } = useForm();
 
   const [errorMessage, setErrorMessage] = useState("");
+
+  const navigate = useNavigate()
 
   const validatePassword = (password) => {
     const errors = [];
@@ -51,6 +53,8 @@ const RegForm = () => {
     if (validatePassword(data?.password)) {
       registerNewUser(data?.email, data?.password, data?.username);
       console.log("Username in the Reg Form:", data?.username);
+      alert('Registered Successfully')
+      navigate('/')
     } else {
       console.log(errorMessage);
     }

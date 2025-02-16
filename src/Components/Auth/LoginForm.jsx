@@ -9,16 +9,24 @@ import AuthContext from "@/Context/AuthContext";
 import { useForm } from "react-hook-form";
 
 const LoginForm = () => {
-  const { signInExistingUser, eyeOpen, handleShowPassword } =
+  const { setUsers, signInExistingUser, eyeOpen, handleShowPassword } =
     useContext(AuthContext);
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
     signInExistingUser(data?.email, data?.password)
-    alert('Signed In Successfully')
-    navigate('/')
+      .then((result) => {
+        console.log(result.user);
+        setUsers(result.user);
+        alert("Signed In Successfully");
+        navigate('/')
+      })
+      .catch((err) => {
+        alert(err.message)
+        reset()
+      });
   };
   return (
     <form

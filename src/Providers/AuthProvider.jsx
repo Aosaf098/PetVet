@@ -16,36 +16,29 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   console.log("What is the Auth Actually:", auth.currentUser);
 
-
   const registerNewUser = (email, password, displayName) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         console.log(result.user);
         setUsers(result.user);
-        updateProfile(auth.currentUser, {displayName})
-        .then((result) => {
-          setUsers(result.user)
-          console.log('Profile Updated')
-        })
-        .catch((err) => {
-          console.log(err.message)
-        })
+        updateProfile(auth.currentUser, { displayName })
+          .then((result) => {
+            setUsers(result.user);
+            console.log("Profile Updated");
+          })
+          .catch((err) => {
+            alert(err.message);
+          });
       })
       .catch((err) => {
-        console.log(err.message);
+        alert(err.message);
       });
   };
 
   const signInExistingUser = (email, password) => {
     setLoading(true);
-    signInWithEmailAndPassword(auth, email, password)
-      .then((result) => {
-        console.log(result.user);
-        setUsers(result.user);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
+    return signInWithEmailAndPassword(auth, email, password)
+      
   };
 
   const signOutExistingUser = () => {
@@ -56,7 +49,7 @@ const AuthProvider = ({ children }) => {
         console.log("Signed Out");
       })
       .catch((err) => {
-        console.log(err.message);
+        alert(err.message);
       });
   };
   const handleShowPassword = () => {
@@ -78,6 +71,7 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     users,
+    setUsers,
     registerNewUser,
     signInExistingUser,
     signOutExistingUser,
