@@ -8,8 +8,8 @@ import {
   CollapsibleTrigger,
 } from "../ui/collapsible";
 import { ChevronRight } from "lucide-react";
-import { useContext } from "react";
-import AuthContext from "@/Context/AuthContext";
+import MobileSheet from "./NavSheetContent/MobileSheet";
+import PCSheet from "./NavSheetContent/PCSheet";
 
 const NavSheet = ({ users }) => {
   const initials = users?.displayName
@@ -30,42 +30,8 @@ const NavSheet = ({ users }) => {
           </Avatar>
         </SheetTrigger>
         <SheetContent>
-          <ul className="flex lg:hidden flex-col">
-            <Link>
-              <Button className="text-xl font-bold" variant="ghost">
-                Home
-              </Button>
-            </Link>
-            <Collapsible className="group/collapsible">
-              <CollapsibleTrigger asChild>
-                <Link className="flex items-center">
-                  <Button className="text-xl font-bold" variant="ghost">
-                    Services
-                  </Button>
-                  <ChevronRight className="w-4 h-4 transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                </Link>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <ul className="flex flex-col mx-6 my-2 border-l border-solid border-gray-500">
-                  <Link>
-                    <Button className="text-xl font-bold" variant="ghost">
-                      Cats
-                    </Button>
-                  </Link>
-                  <Link>
-                    <Button className="text-xl font-bold" variant="ghost">
-                      Dogs
-                    </Button>
-                  </Link>
-                </ul>
-              </CollapsibleContent>
-            </Collapsible>
-            <Link>
-              <Button className="text-xl font-bold" variant="ghost">
-                Shop
-              </Button>
-            </Link>
-          </ul>
+          <MobileSheet />
+          <PCSheet />
         </SheetContent>
       </Sheet>
     </>

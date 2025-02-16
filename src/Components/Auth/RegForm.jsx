@@ -20,13 +20,41 @@ const RegForm = () => {
 
   const { register, handleSubmit } = useForm();
 
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const onSubmit = (data) => {
-    console.log("Form Data: ", data)
-    registerNewUser(data?.email, data?.password, data?.username)
-    console.log('Username in the Reg Form:', data?.username)
+  const validatePassword = (password) => {
+    const errors = [];
+
+    if (password.length < 8) {
+      errors.push("Password must be at least 8 characters long.");
+    }
+    if (!/[a-z]/.test(password)) {
+      errors.push("Password must include at least one lowercase letter.");
+    }
+    if (!/[A-Z]/.test(password)) {
+      errors.push("Password must include at least one uppercase letter.");
+    } else {
+      setErrorMessage("");
+    }
+
+    if (errors.length > 0) {
+      errors.forEach((error) => {
+        setErrorMessage(`- ${error}`);
+      });
+      return false;
+    } else {
+      return true;
+    }
   };
-
+  const onSubmit = (data) => {
+    console.log("Form Data: ", data);
+    if (validatePassword(data?.password)) {
+      registerNewUser(data?.email, data?.password, data?.username);
+      console.log("Username in the Reg Form:", data?.username);
+    } else {
+      console.log(errorMessage);
+    }
+  };
 
   return (
     <>
@@ -94,6 +122,7 @@ const RegForm = () => {
               {confirmEyeOpen ? "Hide" : "Show"}
             </span>
           </div>
+          <div className="text-center">{errorMessage && <span className="text-xs text-red-600">{errorMessage}</span>}</div>
           <Button type="submit" className="w-full bg-secon hover:bg-prim">
             Register
           </Button>
