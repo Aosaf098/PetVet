@@ -1,17 +1,24 @@
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 import NavSheet from "./NavSheet";
-
+import { useContext } from "react";
+import AuthContext from "@/Context/AuthContext";
 
 const NavRight = () => {
-  const loggedIn = false;
+  const { users, signOutExistingUser } = useContext(AuthContext);
+
   return (
     <>
       <div className="flex-1 flex items-center lg:justify-center justify-end">
-        {loggedIn ? (
-          <NavSheet />
+        {users?.email ? (
+          <div className="flex items-center gap-10">
+            <NavSheet />
+            <Button onClick={signOutExistingUser} className="bg-prim">
+              Log Out
+            </Button>
+          </div>
         ) : (
-          <Link to={'/auth/login'}>
+          <Link to={"/auth/login"}>
             <Button className="bg-prim">Join For Free</Button>
           </Link>
         )}

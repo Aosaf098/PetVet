@@ -3,14 +3,28 @@ import React, { useContext } from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Button } from "../ui/button";
-import { Link } from "react-router-dom";
+import { data, Link, useNavigate } from "react-router-dom";
 import Socials from "./Socials";
 import AuthContext from "@/Context/AuthContext";
+import { useForm } from "react-hook-form";
 
 const LoginForm = () => {
-  const { eyeOpen, handleShowPassword } = useContext(AuthContext);
+  const { signInExistingUser, eyeOpen, handleShowPassword } =
+    useContext(AuthContext);
+    const navigate = useNavigate()
+
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data) => {
+    signInExistingUser(data?.email, data?.password)
+    alert('Signed In Successfully')
+    navigate('/')
+  };
   return (
-    <form className={cn("flex flex-col gap-6")}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className={cn("flex flex-col gap-6")}
+    >
       <div className="flex flex-col items-center gap-3 text-center">
         <h1 className="text-2xl font-bold">
           <span className="bg-prim px-4 py-1 rounded-sm text-white m-1">
@@ -25,7 +39,13 @@ const LoginForm = () => {
       <div className="grid gap-6">
         <div className="grid gap-2">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" placeholder="m@example.com" required />
+          <Input
+            {...register("email", { required: true })}
+            id="email"
+            type="email"
+            placeholder="m@example.com"
+            required
+          />
         </div>
         <div className="grid gap-2 relative">
           <div className="flex items-center">
@@ -37,7 +57,12 @@ const LoginForm = () => {
               Forgot your password?
             </a>
           </div>
-          <Input id="password" type={eyeOpen ? "text" : "password"} required />
+          <Input
+            {...register("password", { required: true })}
+            id="password"
+            type={eyeOpen ? "text" : "password"}
+            required
+          />
           <span
             onClick={handleShowPassword}
             className="absolute text-xs top-[38px] right-3 cursor-pointer"
