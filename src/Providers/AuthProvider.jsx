@@ -5,17 +5,20 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
 import React, { useEffect, useState } from "react";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const AuthProvider = ({ children }) => {
   const [eyeOpen, setEyeOpen] = useState(false);
   const [confirmEyeOpen, setConfirmEyeOpen] = useState(false);
   const [users, setUsers] = useState(null);
   const [loading, setLoading] = useState(true);
-  console.log("What is the Auth Actually:", auth.currentUser);
+
+  const googleProvider = new GoogleAuthProvider();
 
   const registerNewUser = (email, password, displayName) => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -28,7 +31,7 @@ const AuthProvider = ({ children }) => {
             console.log("Profile Updated");
           })
           .catch((err) => {
-            alert("kiree", err.message);
+            alert(`Profile Update error: ${err.message}`);
           });
         const newUser = {
           name: displayName,
@@ -36,11 +39,11 @@ const AuthProvider = ({ children }) => {
           firebase_UID: result.user.uid,
         };
         createNewUserDB(newUser);
-        alert('Registered Successfully')
+        alert("Registered Successfully");
       })
 
       .catch((err) => {
-        alert("oiii", err.message);
+        alert(`Create User error: ${err.message}`);
       });
   };
 
@@ -60,6 +63,11 @@ const AuthProvider = ({ children }) => {
         alert(err.message);
       });
   };
+
+  const registerUsingGoogle = () => {
+    return signInWithPopup(auth, googleProvider)
+  };
+
   const handleShowPassword = () => {
     setEyeOpen((prev) => !prev);
   };
@@ -83,6 +91,7 @@ const AuthProvider = ({ children }) => {
     registerNewUser,
     signInExistingUser,
     signOutExistingUser,
+    registerUsingGoogle,
     eyeOpen,
     handleShowPassword,
     confirmEyeOpen,
