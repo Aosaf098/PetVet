@@ -1,5 +1,6 @@
 import AuthContext from "@/Context/AuthContext";
 import { auth } from "@/Firebase/firebase.config";
+import { createNewUserDB } from "@/lib/api";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -22,23 +23,30 @@ const AuthProvider = ({ children }) => {
         console.log(result.user);
         setUsers(result.user);
         updateProfile(auth.currentUser, { displayName })
-          .then((result) => {
-            setUsers(result.user);
+          .then(() => {
+            setUsers(auth.currentUser);
             console.log("Profile Updated");
           })
           .catch((err) => {
-            alert(err.message);
+            alert("kiree", err.message);
           });
+        const newUser = {
+          name: displayName,
+          email: email,
+          firebase_UID: result.user.uid,
+        };
+        createNewUserDB(newUser);
+        alert('Registered Successfully')
       })
+
       .catch((err) => {
-        alert(err.message);
+        alert("oiii", err.message);
       });
   };
 
   const signInExistingUser = (email, password) => {
     setLoading(true);
-    return signInWithEmailAndPassword(auth, email, password)
-      
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   const signOutExistingUser = () => {

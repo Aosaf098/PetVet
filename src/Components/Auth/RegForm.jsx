@@ -18,12 +18,12 @@ const RegForm = () => {
     confirmEyeOpen,
     handleConfirmShowPassword,
   } = useContext(AuthContext);
-  console.log(useForm())
+  console.log(useForm());
   const { register, handleSubmit } = useForm();
 
   const [errorMessage, setErrorMessage] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const validatePassword = (password) => {
     const errors = [];
@@ -49,18 +49,12 @@ const RegForm = () => {
       return true;
     }
   };
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log("Form Data: ", data);
     if (validatePassword(data?.password)) {
-      registerNewUser(data?.email, data?.password, data?.username);
-      const newUser = {
-        name: data?.username,
-        email: data?.email
-      }
-      createNewUserDB(newUser)
-      console.log("Username in the Reg Form:", data?.username);
-      alert('Registered Successfully')
-      navigate('/')
+      await registerNewUser(data?.email, data?.password, data?.username);
+      // console.log("Username in the Reg Form:", data?.username);
+      navigate("/");
     } else {
       console.log(errorMessage);
     }
@@ -132,7 +126,11 @@ const RegForm = () => {
               {confirmEyeOpen ? "Hide" : "Show"}
             </span>
           </div>
-          <div className="text-center">{errorMessage && <span className="text-xs text-red-600">{errorMessage}</span>}</div>
+          <div className="text-center">
+            {errorMessage && (
+              <span className="text-xs text-red-600">{errorMessage}</span>
+            )}
+          </div>
           <Button type="submit" className="w-full bg-secon hover:bg-prim">
             Register
           </Button>
