@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Socials from "./Socials";
 import AuthContext from "@/Context/AuthContext";
 import { useForm } from "react-hook-form";
+import { createNewUserDB } from "@/lib/api";
 
 const RegForm = () => {
   const {
@@ -52,6 +53,11 @@ const RegForm = () => {
     console.log("Form Data: ", data);
     if (validatePassword(data?.password)) {
       registerNewUser(data?.email, data?.password, data?.username);
+      const newUser = {
+        name: data?.username,
+        email: data?.email
+      }
+      createNewUserDB(newUser)
       console.log("Username in the Reg Form:", data?.username);
       alert('Registered Successfully')
       navigate('/')
